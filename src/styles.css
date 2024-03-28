@@ -1,0 +1,651 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(30, 30, 30);
+  font-family: "Chinese Quotes", "Inter var", "Inter", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+}
+.wrapper {
+  margin-top: 15rem;
+  width: 80%;
+}
+summary {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+summary h1 {
+  color: white;
+  font-size: 5rem;
+}
+.search {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+input {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  border-radius: 20px 0 0 20px;
+  padding: 1rem;
+  outline: none;
+  border: none;
+}
+
+.color-sheme,
+input::placeholder {
+  color: white;
+  background-color: rgb(58, 58, 58) !important;
+  font-weight: bold;
+}
+.search-game {
+  cursor: pointer;
+  font-weight: bold;
+  width: calc(100% - 90%);
+  outline: none;
+  border: none;
+  border-left: 1px solid rgb(176, 176, 176);
+  border-radius: 0 20px 20px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.games-container {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 3rem;
+  height: auto;
+}
+.game {
+  flex: 1;
+  min-width: calc(100% / 4 - 1rem);
+  color: white;
+  background-color: rgb(38, 38, 38);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.game:hover {
+  transform: translate(-2px, -4px);
+}
+.game,
+.game img,
+.see-images,
+.suggestions {
+  border-radius: 25px;
+  font-weight: bold;
+}
+.description {
+  padding: 1rem;
+}
+h2,
+h3 {
+  cursor: pointer;
+  margin: 1rem 0;
+}
+h2,
+.description a {
+  color: white;
+  text-decoration: none;
+}
+h2:hover {
+  text-decoration: underline;
+}
+.see-images {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.see-images span {
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+.see-images:hover > span {
+  text-decoration: underline;
+  opacity: 1;
+}
+.img-container:hover > .see-images {
+  display: flex;
+}
+.img-container {
+  position: relative;
+}
+
+.platform {
+  padding: 0.5rem;
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: rgba(23, 23, 23, 0.7);
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add this line */
+}
+.plaforms {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.platform[data-platform="Xbox Series S/X"]:hover,
+.platform[data-platform="Xbox One"]:hover,
+.platform[data-platform="Xbox 360"]:hover,
+.platform[data-platform="Xbox"]:hover {
+  background-color: green;
+}
+.platform[data-platform="PC"]:hover {
+  background-color: gray;
+}
+.platform[data-platform="PlayStation 5"]:hover,
+.platform[data-platform="PlayStation 4"]:hover,
+.platform[data-platform="PlayStation 3"]:hover,
+.platform[data-platform="PlayStation 2"]:hover {
+  background-color: blue;
+}
+
+.platform[data-platform="Nintendo Switch"]:hover {
+  background-color: red;
+}
+
+.platform[data-platform="Linux"]:hover {
+  color: black;
+  background-color: yellow;
+}
+
+.platform[data-platform="macOS"]:hover {
+  color: black;
+  background-color: white;
+}
+
+.platform[data-platform="Android"]:hover {
+  color: white;
+  background-color: rgb(0, 62, 0);
+}
+
+.game-img {
+  position: relative;
+}
+.suggestions {
+  position: absolute;
+  color: white;
+  border: 1px solid black;
+  top: 103%;
+  z-index: 2;
+  background-color: rgb(38, 38, 38);
+  width: 100%;
+}
+.suggestions > div {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.suggestions > div:hover,
+button[type="submit"]:hover {
+  background-color: rgb(146, 146, 146);
+  cursor: pointer;
+}
+.more_about_games {
+  margin: 1rem 0;
+  position: relative;
+  color: rgb(197, 197, 197);
+}
+.more_about_games div {
+  position: relative;
+  margin: 1rem;
+  padding: 0.75rem 0;
+}
+
+.more_about_games div::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(197, 197, 197);
+}
+.release,
+.rating,
+.genres {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline;
+}
+.more_about_games img {
+  height: 1rem;
+  vertical-align: text-bottom;
+}
+.actions {
+  border: 1px solid gray;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  background-color: rgb(45, 45, 45);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.4); /* Add this line */
+  transition: background-color 0.15s ease-in-out;
+}
+.actions:hover {
+  background-color: rgba(255, 58, 58, 0.644);
+}
+.actions img {
+  width: 2rem;
+  height: 1.8rem;
+}
+
+.sorting-tools {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  padding: 2rem 0;
+}
+.sorting-tools select,
+.sorting-tools option {
+  padding: 0.9rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+}
+
+.spinner {
+  margin: 0 auto;
+  height: 120px;
+  width: 120px;
+  border: 6px solid;
+  border-color: white transparent white transparent;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery {
+  z-index: 9;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: fit-content;
+  max-height: 100%;
+  background-color: rgb(45, 45, 45);
+  padding: 4rem 0;
+}
+.carousel-game-images {
+  height: 100%;
+  width: calc(100% - 9rem);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.center {
+  display: grid;
+  place-items: center;
+}
+.gallery-img {
+  min-width: 100%;
+
+  max-height: 100%;
+}
+
+.close-gallery {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.close-gallery:hover,
+.carousel-game-images button:hover {
+  opacity: 0.8;
+}
+.background-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.0028);
+  backdrop-filter: blur(5px);
+}
+
+.right-arrow {
+  position: absolute;
+  right: 0;
+}
+.left-arrow {
+  position: absolute;
+
+  left: 0;
+}
+.carousel-game-images button img {
+  height: 2.5rem;
+}
+.carousel-game-images button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* game information page */
+
+.game-info-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.game-background {
+  height: 15rem;
+  overflow: hidden;
+  object-fit: fill;
+  filter: blur(5px);
+}
+
+.game-info {
+  display: flex;
+  color: white;
+  background-color: #262626;
+  border-radius: 10px;
+  transform: translateY(-10rem);
+}
+
+.game-info article {
+  display: flex;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.game-info article .game-image {
+  display: grid;
+  place-items: center;
+  flex: 1 0 0;
+}
+.game-info article div img {
+  border-radius: 10px;
+}
+.game-info article .game-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2 0 0;
+}
+.game-info article section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+.game-platforms {
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.platforms strong {
+  font-size: 2rem;
+}
+.game-platform {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.2rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.game-ratings {
+  text-align: center;
+  display: flex;
+  padding: 2rem 3rem;
+  justify-content: space-around;
+  gap: 3rem;
+  border-radius: 15px;
+  font-weight: 600;
+  background-color: rgba(90, 90, 90, 0.553);
+}
+
+.game-star,
+.metacritic,
+.icon-descriptior {
+  min-height: 1.9rem;
+  max-width: 2rem;
+
+  border-radius: 0px !important;
+}
+
+.game-ratings .rating-description {
+  padding: 0.5rem 0;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+.general-rating-individual-rate {
+  font-size: 2rem;
+}
+
+.general-rating {
+  display: flex;
+  flex-direction: column;
+}
+
+/* like or dislike container */
+.Like-dislike-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0 0 0;
+}
+.like,
+.dislike {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dislike:hover {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+.like:hover {
+  background-color: #00ff0066;
+}
+
+.icon-descriptior {
+  width: 100%;
+}
+
+.game-available-stores {
+  margin-top: 10rem !important;
+  text-align: center;
+}
+
+.howlongtobeat,
+.game-available-stores,
+.game-info {
+  background-color: #262626;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 0 30rem;
+}
+.howlongtobeat {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.howlongtobeat h2 a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+.howlongtobeat h2 a::after {
+  content: url("./Gameabout/externallink.svg");
+  position: absolute;
+  right: -30px;
+
+  top: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.howlongtobeat h2 a:hover::after {
+  transform: translate(3px, -3px);
+}
+
+/* Game information page (hours)*/
+.howlongtobeat-data {
+  margin: 4rem 0;
+  color: white;
+
+  display: grid;
+  font-weight: 700;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.howlongtobeat-data-grid-child h4 {
+  margin-bottom: 1rem;
+}
+
+.see-screenshots {
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  margin-top: 1rem;
+  background-color: #171717;
+  border-radius: 10px;
+  border: black 1px solid;
+}
+.see-screenshots:hover {
+  background-color: #585858;
+}
+.more-game-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* store styles */
+
+.store-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.store-list a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.store-list a:hover {
+  background-color: #4f4f4f;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.store-list img {
+  height: 5rem;
+  filter: grayscale(100%);
+}
+.store-list > a:hover > img {
+  filter: grayscale(0%);
+}
+
+.howlongtobeat-data-grid-child p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(166, 166, 166);
+}
+
+.main-image-game {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.game-image {
+  overflow: hidden;
+}
+
+.game-image img {
+  transition: transform 0.2s ease-in-out;
+}
+.game-image:hover img {
+  transform: scale(1.1);
+}
+
+/* footer styles */
+footer {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  font-weight: 700;
+  background-color: #262626;
+}
+/* back home button */
+
+.back-home {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #171717;
+  font-weight: 700;
+  padding: 1rem;
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+}
+.back-home:hover {
+  background-color: #585858;
+  color: white;
+}

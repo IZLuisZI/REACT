@@ -1,0 +1,92 @@
+@media screen and (max-width: 2000px) {
+  .wrapper {
+    margin: 20rem 0.5rem;
+  }
+  .games {
+    min-width: calc(100% / 4 - 1rem);
+  }
+
+  button[type="submit"] {
+    width: calc(100% - 80%);
+  }
+  input {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .game-info,
+  .howlongtobeat,
+  .game-available-stores {
+    margin: 0 10rem;
+  }
+}
+@media screen and (max-width: 1359px) {
+  .game-info,
+  .howlongtobeat,
+  .game-available-stores {
+    margin: 0 1rem;
+  }
+  .game-info article section h1 {
+    font-size: 3rem;
+  }
+  .gallery {
+    width: 100%;
+    height: 100%;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .game {
+    min-width: calc(100% / 3 - 1rem);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .game {
+    min-width: calc(100% / 2 - 1rem);
+  }
+  .game-ratings {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .game-info article,
+  .more-game-controls {
+    flex-direction: column;
+  }
+  .game-info article {
+    padding: 0;
+  }
+  .game-image {
+    flex: 1 0 400px !important;
+  }
+
+  .store-list,
+  .howlongtobeat-data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .game-ratings {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .game-info article section h1 {
+    font-size: 2.5rem;
+  }
+  .gallery {
+    width: 100%;
+    height: 50%;
+  }
+  .carousel-game-images {
+    width: 100%;
+  }
+  .games-container {
+    padding: 1rem;
+  }
+  .game {
+    min-width: calc(100% / 1 - 1rem);
+  }
+  .game {
+    width: 100%;
+  }
+}
