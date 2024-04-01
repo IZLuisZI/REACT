@@ -73,15 +73,14 @@ img {
   height: auto;
 }
 .games-container {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   gap: 1rem;
   padding: 3rem;
   height: auto;
 }
 .game {
-  flex: 1;
   min-width: calc(100% / 4 - 1rem);
   color: white;
   background-color: rgb(38, 38, 38);
@@ -198,6 +197,7 @@ h2:hover {
 
 .game-img {
   position: relative;
+  min-width: 100%;
 }
 .suggestions {
   position: absolute;

@@ -36,7 +36,7 @@ function GameInfo({
     const encodedGameName = encodeURIComponent(sliceParenthesis(gameName));
 
     // Fetch the data from the server
-    fetch(`${VITE_BACKEND_URL}${encodedGameName}`)
+    fetch(`http://localhost:1234/games/game/${encodedGameName}`)
       .then((response) => response.json())
       .then((data) => {
         setHltbData(data);
