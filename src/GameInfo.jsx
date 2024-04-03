@@ -36,11 +36,10 @@ function GameInfo({
     const encodedGameName = encodeURIComponent(sliceParenthesis(gameName));
 
     // Fetch the data from the server
-    fetch(`http://localhost:1234/games/game/${encodedGameName}`)
+    fetch(`${server}/games/game/${encodedGameName}`)
       .then((response) => response.json())
       .then((data) => {
         setHltbData(data);
-        console.log(data);
       })
       .catch((error) => console.error("Error fetching data: ", error));
 

@@ -12,12 +12,15 @@ function App() {
   const [gameInfo, setGameInfo] = useState(null);
   const [page, setPage] = useState(1);
   const apiKey = import.meta.env.VITE_API_KEY;
+  const server = import.meta.env.VITE_BACKEND_URL;
+
   useEffect(() => {
-    fetch(`https://api.rawg.io/api/games?key=${apiKey}&page_size=100${page}`)
+    fetch(`${server}/api/games`)
       .then((response) => response.json())
-      .then((data) => setGames(data.results))
+      .then((data) => setGames(data))
       .catch((error) => console.error("Error fetching data: ", error));
   }, []);
+  console.log(games);
 
   useEffect(() => {
     function handleScroll() {
