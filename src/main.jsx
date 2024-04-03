@@ -5,11 +5,12 @@ import App from "./App.jsx";
 import "./styles.css";
 import "./media-querys.css";
 import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Search-game-demo">
+    <HashRouter basename="/Search-game-demo">
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
