@@ -10,7 +10,8 @@ This is a demo website for searching games, created with the RAWG API.
 
 1. Clone the repository
 2. Install dependencies with `npm install`
-3. Start the development server with `npm run dev`
+3. Put your api keys on a env file
+4. Start the development server with `npm run dev`
 
 ## Features
 
